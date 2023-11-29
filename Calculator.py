@@ -1,11 +1,12 @@
 x  = int(input("Enter first number :- "))
-y  = int(input("Enter second number :- "))
 my_operator = ['+' , '-' , '*' , '/' , 'to pwr']
 
 for i, item in enumerate(my_operator, start=1):
     print('[', i, ']', item)
 
 select_operator = int(input("select the operator :- "))
+
+y  = int(input("Enter second number :- "))
 
 def addition():
     result = x + y

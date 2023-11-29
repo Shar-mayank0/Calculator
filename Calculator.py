@@ -1,5 +1,6 @@
+import math
 x  = int(input("Enter first number :- "))
-my_operator = ['+' , '-' , '*' , '/' , 'to pwr']
+my_operator = ['+' , '-' , '*' , '/' , 'to pwr','sqroot']
 
 for i, item in enumerate(my_operator, start=1):
     print('[', i, ']', item)
@@ -28,6 +29,12 @@ def expo():
     result = x ** y
     print ("your result is " , result , sep= " ")
 
+def sqrt():
+    result = math.sqrt(x)
+    print ("your result is " , result , sep= " ")
+
+
+
 if select_operator == 1:
     addition()
 
@@ -42,6 +49,9 @@ elif select_operator == 4:
  
 
 elif select_operator == 5:
+    expo()
+
+elif select_operator == 6:
     expo()
 
 else:

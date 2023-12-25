@@ -60,6 +60,24 @@ def opdvd():
     math = "dvd"
     infld.delete(0,END)
 
+def opsq():
+    first_num = infld.get()
+    global fnum
+    global math
+    fnum = float(first_num)
+    math = "sq"
+    infld.delete(0,END)
+    infld.insert(0, '('+ first_num + ')' + "²" )
+
+def opsqrt():
+    first_num = infld.get()
+    global fnum
+    global math
+    fnum = float(first_num)
+    math = "sqrt"
+    infld.delete(0,END)
+    infld.insert(0, '√' + '('+ first_num + ')'  )
+
 def equal():
     sec_num = infld.get()
     infld.delete(0,END)
@@ -71,6 +89,10 @@ def equal():
         infld.insert(0, fnum * float(sec_num))
     elif math == "dvd":
         infld.insert(0, fnum / float(sec_num))
+    elif math == "sq":
+        infld.insert(0, fnum ** 2)
+    elif math == "sqrt":
+        infld.insert(0, fnum ** 0.5)
 
 
 num1 = Button(root, text="1", padx=30, pady=20, command=lambda: click(1))
@@ -99,8 +121,8 @@ butt_equal = Button(root, text= "=",padx=66, pady=20, command= equal)
 
 butt_dot = Button(root, text=".", padx=31, pady=20, command=lambda: dot("."))
 
-butt_sqrt = Button(root, text= "√x", padx=27, pady=20)
-butt_sqr = Button(root, text="x²", padx=27, pady=20)
+butt_sqrt = Button(root, text= "√x", padx=27, pady=20, command= opsqrt)
+butt_sqr = Button(root, text="x²", padx=27, pady=20, command= opsq)
 
 butt_clear = Button(root, text="C", padx=29, pady=20, command=clr)
 butt_bksps = Button(root, text="⌫", padx=27, pady=20,command=bksps)

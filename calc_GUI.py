@@ -1,4 +1,5 @@
-from tkinter import *
+from tkinter import Tk, Entry, Button
+
 root = Tk()
 root.title("Calculator")
 
@@ -6,20 +7,35 @@ infld = Entry(root, width=35 , borderwidth=5)
 infld.grid(row=0, column=0, columnspan=5, rowspan=2)
 
 def click(x):
+
+    """
+    Appends the given value to the input field.
+
+    Parameters:
+    x (str): The value to be appended to the input field.
+    """
+
     cu = infld.get()
     infld.delete(0, END)
     infld.insert(0, str(cu) + str(x))
 
 def clr():
+
+    'Clears the input field.'
+
     infld.delete(0, END)
 
 def bksps():
+    'Deletes the last character from the input field.'
     cu = str(infld.get())
     c = len(cu)
     infld.delete(0,END)
     infld.insert(0, cu[0:c-1])
 
 def dot(d):
+    """
+    Adds a dot (decimal point) to the input field if it doesn't already contain one.
+    """
     cu = infld.get()
     if "." not in cu:
         cu = infld.get()
@@ -34,7 +50,7 @@ def opadd():
     global math
     fnum = float(first_num)
     math = "add"
-    infld.delete(0,END)
+    infld.delete(0, END)
 
 def opsub():
     first_num = infld.get()
@@ -58,7 +74,7 @@ def opdvd():
     global math
     fnum = float(first_num)
     math = "dvd"
-    infld.delete(0,END)
+    infld.delete(0, END)
 
 def opsq():
     first_num = infld.get()
@@ -79,6 +95,9 @@ def opsqrt():
     infld.insert(0, '√' + '('+ first_num + ')'  )
 
 def equal():
+    """
+    Perform the mathematical operation based on the value of 'math' variable and display the result in the input field.
+    """
     sec_num = infld.get()
     infld.delete(0,END)
     if math == "add":

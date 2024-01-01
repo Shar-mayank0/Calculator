@@ -1,4 +1,4 @@
-from tkinter import Tk, Entry, Button
+from tkinter import *
 
 root = Tk()
 root.title("Calculator")

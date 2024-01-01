@@ -27,7 +27,7 @@
 
   <h3>Usage</h3>
   <p>Run the <code>calc_GUI.py</code> file to start the calculator:</p>
-  <pre><code>python calc_GUI.py</code></pre>
+  <pre><code>calc_GUI.py</code></pre>
   <p>Follow the on-screen instructions to perform calculations.</p>
 
   <h2>Contributing</h2>

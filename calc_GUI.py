@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import END, Tk, Entry, Button
 
 root = Tk()
 root.title("Calculator")
@@ -98,17 +98,17 @@ def equal():
     sec_num = infld.get()
     infld.delete(0,END)
     if math == "add":
-        infld.insert(0, fnum + float(sec_num))
+        infld.insert(0, str(fnum + float(sec_num)))
     elif math == "sub":
-        infld.insert(0, fnum - float(sec_num))
+        infld.insert(0, str(fnum - float(sec_num)))
     elif math == "mlt":
-        infld.insert(0, fnum * float(sec_num))
+        infld.insert(0, str(fnum * float(sec_num)))
     elif math == "dvd":
-        infld.insert(0, fnum / float(sec_num))
+        infld.insert(0, str(fnum / float(sec_num)))
     elif math == "sq":
-        infld.insert(0, fnum ** 2)
+        infld.insert(0, str(fnum ** 2))
     elif math == "sqrt":
-        infld.insert(0, fnum ** 0.5)
+        infld.insert(0, str(fnum ** 0.5))
 
 
 num1 = Button(root, text="1", padx=30, pady=20, command=lambda: click(1))
